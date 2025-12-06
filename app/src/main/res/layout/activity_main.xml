@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/clouds_bg"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/main_LAY_hearts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:orientation="horizontal"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp">
+
+        <ImageView
+            android:id="@+id/main_IMG_heart0"
+            android:layout_width="@dimen/heart_width"
+            android:layout_height="@dimen/heart_height"
+            android:src="@drawable/heart" />
+
+        <ImageView
+            android:id="@+id/main_IMG_heart1"
+            android:layout_width="@dimen/heart_width"
+            android:layout_height="@dimen/heart_height"
+            android:layout_marginStart="@dimen/heart_margin_start"
+            android:src="@drawable/heart" />
+
+        <ImageView
+            android:id="@+id/main_IMG_heart2"
+            android:layout_width="@dimen/heart_width"
+            android:layout_height="@dimen/heart_height"
+            android:layout_marginStart="@dimen/heart_margin_start"
+            android:src="@drawable/heart" />
+    </LinearLayout>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/main_BTN_left"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="24dp"
+        android:text=""
+        android:insetLeft="0dp"
+        android:insetRight="0dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:padding="0dp"
+        app:iconPadding="0dp"
+        app:cornerRadius="32dp"
+        app:backgroundTint="@color/bottom_color"
+        app:icon="@drawable/outline_arrow_back_24"
+        app:iconTint="@android:color/white"
+        app:iconSize="32dp"
+        app:iconGravity="textStart" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/main_BTN_right"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:text=""
+        android:textAllCaps="false"
+        android:insetLeft="0dp"
+        android:insetRight="0dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:padding="0dp"
+        app:iconPadding="0dp"
+        app:cornerRadius="32dp"
+        app:backgroundTint="@color/bottom_color"
+        app:icon="@drawable/outline_arrow_forward_24"
+        app:iconTint="@android:color/white"
+        app:iconSize="32dp"
+        app:iconGravity="textStart" />
+
+
+    <LinearLayout
+        android:id="@+id/main_LAY_board_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@id/main_LAY_hearts"
+        android:layout_above="@id/main_BTN_right"
+        android:layout_marginTop="16dp">
+
+        <LinearLayout
+            android:id="@+id/main_LAY_hotdogs"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="50"
+            android:orientation="vertical"
+            android:layout_margin="32dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgHotdog00"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="16dp"
+                    android:src="@drawable/hotdog"
+                    android:scaleType="centerInside"
+                    android:adjustViewBounds="true" />
+
+                <ImageView
+                    android:id="@+id/imgHotdog01"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="16dp"
+                    android:src="@drawable/hotdog"
+                    android:scaleType="centerInside"
+                    android:adjustViewBounds="true" />
+
+                <ImageView
+                    android:id="@+id/imgHotdog02"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="16dp"
+                    android:src="@drawable/hotdog"
+                    android:scaleType="centerInside"
+                    android:adjustViewBounds="true" />
+            </LinearLayout>
+
+            <!-- שורה 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgHotdog10"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="16dp"
+                    android:src="@drawable/hotdog"
+                    android:scaleType="centerInside"
+                    android:adjustViewBounds="true" />
+
+                <ImageView
+                    android:id="@+id/imgHotdog11"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="16dp"
+                    android:src="@drawable/hotdog"
+                    android:scaleType="centerInside"
+                    android:adjustViewBounds="true" />
+
+                <ImageView
+                    android:id="@+id/imgHotdog12"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="16dp"
+                    android:src="@drawable/hotdog"
+                    android:scaleType="centerInside"
+                    android:adjustViewBounds="true" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgHotdog20"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="16dp"
+                    android:src="@drawable/hotdog"
+                    android:scaleType="centerInside"
+                    android:adjustViewBounds="true" />
+
+                <ImageView
+                    android:id="@+id/imgHotdog21"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="16dp"
+                    android:src="@drawable/hotdog"
+                    android:scaleType="centerInside"
+                    android:adjustViewBounds="true" />
+
+                <ImageView
+                    android:id="@+id/imgHotdog22"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="16dp"
+                    android:src="@drawable/hotdog"
+                    android:scaleType="centerInside"
+                    android:adjustViewBounds="true" />
+            </LinearLayout>
+
+            <!-- שורה 3 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgHotdog30"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="16dp"
+                    android:src="@drawable/hotdog"
+                    android:scaleType="centerInside"
+                    android:adjustViewBounds="true" />
+
+                <ImageView
+                    android:id="@+id/imgHotdog31"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="16dp"
+                    android:src="@drawable/hotdog"
+                    android:scaleType="centerInside"
+                    android:adjustViewBounds="true" />
+
+                <ImageView
+                    android:id="@+id/imgHotdog32"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="16dp"
+                    android:src="@drawable/hotdog"
+                    android:scaleType="centerInside"
+                    android:adjustViewBounds="true" />
+            </LinearLayout>
+
+            <!-- שורה 4 – גם hotdog וגם רכב -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <!-- עמודה 0 -->
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/imgHotdog40"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="16dp"
+                        android:src="@drawable/hotdog"
+                        android:scaleType="centerInside"
+                        android:adjustViewBounds="true"
+                        android:visibility="invisible"/>
+
+                    <ImageView
+                        android:id="@+id/main_IMG_car_left"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="0dp"
+                        android:src="@drawable/dachshund"
+                        android:scaleType="centerInside"
+                        android:adjustViewBounds="true"
+                        android:visibility="invisible"/>
+                </FrameLayout>
+
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/imgHotdog41"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="16dp"
+                        android:src="@drawable/hotdog"
+                        android:scaleType="centerInside"
+                        android:adjustViewBounds="true"
+                        android:visibility="invisible"/>
+
+                    <ImageView
+                        android:id="@+id/main_IMG_car"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="0dp"
+                        android:src="@drawable/dachshund"
+                        android:scaleType="centerInside"
+                        android:adjustViewBounds="true"
+                        android:visibility="visible"/>
+                </FrameLayout>
+
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/imgHotdog42"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="16dp"
+                        android:src="@drawable/hotdog"
+                        android:scaleType="centerInside"
+                        android:adjustViewBounds="true"
+                        android:visibility="invisible"/>
+
+                    <ImageView
+                        android:id="@+id/main_IMG_car_right"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="0dp"
+                        android:src="@drawable/dachshund"
+                        android:scaleType="centerInside"
+                        android:adjustViewBounds="true"
+                        android:visibility="invisible"/>
+                </FrameLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- שכבת Game Over -->
+    <RelativeLayout
+        android:id="@+id/main_LAY_game_over"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:background="@android:color/white">
+
+            <TextView
+                android:id="@+id/main_LBL_game_over"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Game Over\nYour sausage dog just turned into a sausage🍖🐶"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_gravity="center_horizontal"
+                android:paddingBottom="16dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/main_BTN_play_again"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Play again"
+                android:textStyle="bold"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
