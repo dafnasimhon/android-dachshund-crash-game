@@ -43,12 +43,7 @@ class GameManager(
         }
     }
 
-    fun loseLife(): Boolean {
-        if (lives > 0) {
-            lives--
-        }
-        return lives == 0
-    }
+
     fun tick(): TickResult {
         for (r in rows - 1 downTo 1) {
             for (c in 0 until cols) {
