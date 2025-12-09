@@ -5,10 +5,10 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/clouds_bg"
+    android:background="@drawable/cloud_background"
+    android:layoutDirection="ltr"
     tools:context=".MainActivity">
-
-    <LinearLayout
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/main_LAY_hearts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,28 +17,24 @@
         android:orientation="horizontal"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp">
-
-        <ImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_heart0"
             android:layout_width="@dimen/heart_width"
             android:layout_height="@dimen/heart_height"
             android:src="@drawable/heart" />
-
-        <ImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_heart1"
             android:layout_width="@dimen/heart_width"
             android:layout_height="@dimen/heart_height"
             android:layout_marginStart="@dimen/heart_margin_start"
             android:src="@drawable/heart" />
-
-        <ImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_heart2"
             android:layout_width="@dimen/heart_width"
             android:layout_height="@dimen/heart_height"
             android:layout_marginStart="@dimen/heart_margin_start"
             android:src="@drawable/heart" />
-    </LinearLayout>
-
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/main_BTN_left"
@@ -61,7 +57,6 @@
         app:iconTint="@android:color/white"
         app:iconSize="32dp"
         app:iconGravity="textStart" />
-
     <com.google.android.material.button.MaterialButton
         android:id="@+id/main_BTN_right"
         android:layout_width="64dp"
@@ -85,31 +80,27 @@
         app:iconSize="32dp"
         app:iconGravity="textStart" />
 
-
-    <LinearLayout
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/main_LAY_board_parent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_below="@id/main_LAY_hearts"
         android:layout_above="@id/main_BTN_right"
-        android:layout_marginTop="16dp">
-
-        <LinearLayout
+        android:layout_marginTop="8dp">
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/main_LAY_hotdogs"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="50"
             android:orientation="vertical"
             android:layout_margin="32dp">
-
-            <LinearLayout
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:orientation="horizontal">
-
-                <ImageView
+                <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/imgHotdog00"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -118,8 +109,7 @@
                     android:src="@drawable/hotdog"
                     android:scaleType="centerInside"
                     android:adjustViewBounds="true" />
-
-                <ImageView
+                <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/imgHotdog01"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -128,8 +118,7 @@
                     android:src="@drawable/hotdog"
                     android:scaleType="centerInside"
                     android:adjustViewBounds="true" />
-
-                <ImageView
+                <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/imgHotdog02"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -138,16 +127,14 @@
                     android:src="@drawable/hotdog"
                     android:scaleType="centerInside"
                     android:adjustViewBounds="true" />
-            </LinearLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
-            <!-- שורה 1 -->
-            <LinearLayout
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:orientation="horizontal">
-
-                <ImageView
+                <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/imgHotdog10"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -156,8 +143,7 @@
                     android:src="@drawable/hotdog"
                     android:scaleType="centerInside"
                     android:adjustViewBounds="true" />
-
-                <ImageView
+                <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/imgHotdog11"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -166,8 +152,7 @@
                     android:src="@drawable/hotdog"
                     android:scaleType="centerInside"
                     android:adjustViewBounds="true" />
-
-                <ImageView
+                <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/imgHotdog12"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -176,16 +161,14 @@
                     android:src="@drawable/hotdog"
                     android:scaleType="centerInside"
                     android:adjustViewBounds="true" />
-            </LinearLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
-
-            <LinearLayout
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:orientation="horizontal">
-
-                <ImageView
+                <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/imgHotdog20"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -194,8 +177,7 @@
                     android:src="@drawable/hotdog"
                     android:scaleType="centerInside"
                     android:adjustViewBounds="true" />
-
-                <ImageView
+                <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/imgHotdog21"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -204,8 +186,7 @@
                     android:src="@drawable/hotdog"
                     android:scaleType="centerInside"
                     android:adjustViewBounds="true" />
-
-                <ImageView
+                <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/imgHotdog22"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -214,16 +195,14 @@
                     android:src="@drawable/hotdog"
                     android:scaleType="centerInside"
                     android:adjustViewBounds="true" />
-            </LinearLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
-            <!-- שורה 3 -->
-            <LinearLayout
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:orientation="horizontal">
-
-                <ImageView
+                <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/imgHotdog30"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -232,8 +211,7 @@
                     android:src="@drawable/hotdog"
                     android:scaleType="centerInside"
                     android:adjustViewBounds="true" />
-
-                <ImageView
+                <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/imgHotdog31"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -242,8 +220,7 @@
                     android:src="@drawable/hotdog"
                     android:scaleType="centerInside"
                     android:adjustViewBounds="true" />
-
-                <ImageView
+                <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/imgHotdog32"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -252,22 +229,19 @@
                     android:src="@drawable/hotdog"
                     android:scaleType="centerInside"
                     android:adjustViewBounds="true" />
-            </LinearLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
-            <!-- שורה 4 – גם hotdog וגם רכב -->
-            <LinearLayout
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:orientation="horizontal">
 
-                <!-- עמודה 0 -->
                 <FrameLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1">
-
-                    <ImageView
+                    <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/imgHotdog40"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -276,8 +250,7 @@
                         android:scaleType="centerInside"
                         android:adjustViewBounds="true"
                         android:visibility="invisible"/>
-
-                    <ImageView
+                    <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/main_IMG_car_left"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -288,13 +261,11 @@
                         android:visibility="invisible"/>
                 </FrameLayout>
 
-
                 <FrameLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1">
-
-                    <ImageView
+                    <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/imgHotdog41"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -303,8 +274,7 @@
                         android:scaleType="centerInside"
                         android:adjustViewBounds="true"
                         android:visibility="invisible"/>
-
-                    <ImageView
+                    <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/main_IMG_car"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -315,13 +285,11 @@
                         android:visibility="visible"/>
                 </FrameLayout>
 
-
                 <FrameLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1">
-
-                    <ImageView
+                    <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/imgHotdog42"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -330,8 +298,7 @@
                         android:scaleType="centerInside"
                         android:adjustViewBounds="true"
                         android:visibility="invisible"/>
-
-                    <ImageView
+                    <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/main_IMG_car_right"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -341,21 +308,17 @@
                         android:adjustViewBounds="true"
                         android:visibility="invisible"/>
                 </FrameLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
-            </LinearLayout>
 
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <!-- שכבת Game Over -->
     <RelativeLayout
         android:id="@+id/main_LAY_game_over"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#80000000"
         android:visibility="gone">
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -363,7 +326,6 @@
             android:orientation="vertical"
             android:padding="24dp"
             android:background="@android:color/white">
-
             <TextView
                 android:id="@+id/main_LBL_game_over"
                 android:layout_width="wrap_content"
@@ -374,7 +336,6 @@
                 android:textColor="@android:color/black"
                 android:layout_gravity="center_horizontal"
                 android:paddingBottom="16dp" />
-
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/main_BTN_play_again"
                 android:layout_width="wrap_content"
@@ -382,9 +343,7 @@
                 android:text="Play again"
                 android:textStyle="bold"
                 android:textAllCaps="false" />
-
         </LinearLayout>
-
     </RelativeLayout>
-
 </RelativeLayout>
+
