@@ -6,4 +6,17 @@
     <dimen name="heart_width">32dp</dimen>
     <dimen name="heart_height">32dp</dimen>
     <dimen name="heart_margin_start">8dp</dimen>
+    <dimen name="spacing_xs">8dp</dimen>
+    <dimen name="spacing_s">16dp</dimen>
+    <dimen name="spacing_m">24dp</dimen>
+    <dimen name="spacing_l">32dp</dimen>
+
+    <dimen name="button_square_size">64dp</dimen>
+    <dimen name="button_corner_radius">32dp</dimen>
+    <dimen name="icon_size_large">32dp</dimen>
+
+    <dimen name="hotdog_padding">16dp</dimen>
+
+    <dimen name="game_over_text_size">24sp</dimen>
+    <dimen name="zero_dp">0dp</dimen>
 </resources>

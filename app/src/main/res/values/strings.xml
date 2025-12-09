@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">assighment1</string>
+    <string name="game_over_message">
+    Game Over\nYour sausage dog just turned into a sausage🍖🐶
+</string>
+    <string name="play_again">Play again</string>
 </resources>
