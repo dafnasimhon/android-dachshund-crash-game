@@ -1,4 +1,4 @@
-package com.example.assighment1
+package com.example.assighment1.logic
 
 import kotlin.random.Random
 
