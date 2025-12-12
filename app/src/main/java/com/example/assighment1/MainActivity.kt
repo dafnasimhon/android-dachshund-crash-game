@@ -1,5 +1,6 @@
 package com.example.assighment1
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
@@ -22,11 +23,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var gameTimer: GameTimer
     private var pendingRestart: Boolean = false
 
-    // Game Over
-    private lateinit var gameOverLayout: View
-    private lateinit var btnPlayAgain: MaterialButton
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -37,12 +33,15 @@ class MainActivity : AppCompatActivity() {
         initCarsArray()
         initHeartsArray()
         initButtons()
-        initGameOverViews()
-
         startNewGame()
+
         gameTimer = GameTimer(GameConstants.Timer.DELAY) {
             gameTick()
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
         gameTimer.start()
     }
 
@@ -51,14 +50,39 @@ class MainActivity : AppCompatActivity() {
         gameTimer.stop()
     }
 
+    override fun onResume() {
+        super.onResume()
+        gameTimer.start()
+    }
+
     private fun initHotdogsMatrix() {
-        hotdogs = Array(ROWS) { row ->
-            Array(COLS) { col ->
-                val viewIdName = "imgHotdog${row}${col}"
-                val resId = resources.getIdentifier(viewIdName, "id", packageName)
-                findViewById<ImageView>(resId)
-            }
-        }
+        hotdogs = arrayOf(
+            arrayOf(
+                findViewById(R.id.imgHotdog00),
+                findViewById(R.id.imgHotdog01),
+                findViewById(R.id.imgHotdog02),
+            ),
+            arrayOf(
+                findViewById(R.id.imgHotdog10),
+                findViewById(R.id.imgHotdog11),
+                findViewById(R.id.imgHotdog12),
+            ),
+            arrayOf(
+                findViewById(R.id.imgHotdog20),
+                findViewById(R.id.imgHotdog21),
+                findViewById(R.id.imgHotdog22),
+            ),
+            arrayOf(
+                findViewById(R.id.imgHotdog30),
+                findViewById(R.id.imgHotdog31),
+                findViewById(R.id.imgHotdog32),
+            ),
+            arrayOf(
+                findViewById(R.id.imgHotdog40),
+                findViewById(R.id.imgHotdog41),
+                findViewById(R.id.imgHotdog42),
+            ),
+        )
 
         clearBoardUI()
     }
@@ -115,17 +139,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-//    private fun onCrash() {
-//        val gameOver = gameManager.loseLife()
-//        updateHeartsUI()
-//
-//        if (gameOver) {
-//            gameManager.resetGame()
-//            updateHeartsUI()
-//            updateCarPosition()
-//        }
-//    }
-
     private fun onCrashUI() {
         print("crash")
 
@@ -138,25 +151,6 @@ class MainActivity : AppCompatActivity() {
         SignalManager.getInstance().vibrate()
     }
 
-    // -------- Game Over --------
-    private fun initGameOverViews() {
-        gameOverLayout = findViewById(R.id.main_LAY_game_over)
-        btnPlayAgain = findViewById(R.id.main_BTN_play_again)
-
-        btnPlayAgain.setOnClickListener {
-            hideGameOverScreen()
-            startNewGame()
-            gameTimer.start()
-        }
-    }
-
-    private fun showGameOverScreen() {
-        gameOverLayout.visibility = View.VISIBLE
-    }
-
-    private fun hideGameOverScreen() {
-        gameOverLayout.visibility = View.GONE
-    }
 
     // -------- buttons --------
     private fun initButtons() {
@@ -192,7 +186,9 @@ class MainActivity : AppCompatActivity() {
 
         if (result.gameOver) {
             gameTimer.stop()
-            showGameOverScreen()
+            val intent = Intent(this, GameOverActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 

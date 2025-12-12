@@ -337,39 +337,4 @@
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
-    <RelativeLayout
-        android:id="@+id/main_LAY_game_over"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/game_over_overlay"
-        android:visibility="gone">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:orientation="vertical"
-            android:padding="@dimen/spacing_m"
-            android:background="@android:color/white">
-
-            <TextView
-                android:id="@+id/main_LBL_game_over"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/game_over_message"
-                android:textSize="@dimen/game_over_text_size"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"
-                android:layout_gravity="center_horizontal"
-                android:paddingBottom="@dimen/spacing_s" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/main_BTN_play_again"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/play_again"
-                android:textStyle="bold"
-                android:textAllCaps="false" />
-        </LinearLayout>
-    </RelativeLayout>
 </RelativeLayout>
