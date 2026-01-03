@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
     private var useSensors: Boolean = false
     private var gameDelay: Long = GameConstants.Timer.SLOW_DELAY
 
-    private var tiltDetector: TiltDetector? = null // שינוי ל-Nullable למניעת קריסה
+    private var tiltDetector: TiltDetector? = null
     private lateinit var main_LBL_odometer: MaterialTextView
     private lateinit var singleSoundPlayer: SingleSoundPlayer
     private lateinit var fusedLocationClient: FusedLocationProviderClient
@@ -66,9 +66,9 @@ class MainActivity : AppCompatActivity() {
         initButtons()
 
         if (useSensors) {
+            initTiltDetector()
             btnLeft.visibility = View.GONE
             btnRight.visibility = View.GONE
-            initTiltDetector()
         } else {
             btnLeft.visibility = View.VISIBLE
             btnRight.visibility = View.VISIBLE
@@ -76,6 +76,7 @@ class MainActivity : AppCompatActivity() {
 
         startNewGame()
 
+        // הפעלת הטיימר עם הדיליי שנבחר (בסנסורים זה תמיד יתחיל ב-Slow)
         gameTimer = GameTimer(gameDelay) {
             gameTick()
         }
@@ -99,16 +100,10 @@ class MainActivity : AppCompatActivity() {
 
         if (result.gameOver) {
             stopGame()
-
             val finalScore = gameManager.distance
 
             getCurrentLocation { lat, lon ->
-                RecordListManager.getInstance().addRecord(
-                    score = finalScore,
-                    lat = lat,
-                    lon = lon
-                )
-
+                RecordListManager.getInstance().addRecord(score = finalScore, lat = lat, lon = lon)
                 val intent = Intent(this, MenuActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
                 startActivity(intent)
@@ -117,47 +112,79 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun stopGame() {
-        gameTimer.stop()
-        if (useSensors) tiltDetector?.stop()
+    private fun initTiltDetector() {
+        // הגנה: אם אנחנו לא במצב סנסורים, לא יוצרים את האובייקט
+        if (!useSensors) return
+
+        tiltDetector = TiltDetector(this, object : TiltCallback {
+            override fun onTiltLeft() {
+                gameManager.moveLeft()
+                updateCarPosition()
+            }
+
+            override fun onTiltRight() {
+                gameManager.moveRight()
+                updateCarPosition()
+            }
+
+            override fun onTiltForward() {
+                updateSpeed(GameConstants.Timer.FAST_DELAY)
+            }
+
+            override fun onTiltBackward() {
+                updateSpeed(GameConstants.Timer.SLOW_DELAY)
+            }
+        })
     }
 
+    private fun updateSpeed(newDelay: Long) {
+        // חסימה מוחלטת: אם לא משתמשים בסנסורים, אי אפשר לשנות מהירות דרך הטיה
+        if (!useSensors) return
+
+        if (gameDelay != newDelay) {
+            gameDelay = newDelay
+            gameTimer.updateDelay(newDelay)
+
+            val status = if (newDelay == GameConstants.Timer.FAST_DELAY) "FAST ⚡" else "SLOW 🐢"
+            SignalManager.getInstance().toast(status, SignalManager.ToastLength.SHORT)
+        }
+    }
+
+    private fun stopGame() {
+        gameTimer.stop()
+        if (useSensors) {
+            tiltDetector?.stop()
+        }
+    }
 
     override fun onResume() {
         super.onResume()
         gameTimer.start()
-        if (useSensors) tiltDetector?.start()
+        // הפעלה של האזנה לסנסורים רק אם המצב פעיל
+        if (useSensors) {
+            tiltDetector?.start()
+        }
     }
 
     override fun onPause() {
         super.onPause()
         gameTimer.stop()
-        if (useSensors) tiltDetector?.stop()
+        // עצירת האזנה לסנסורים רק אם הם הופעלו
+        if (useSensors) {
+            tiltDetector?.stop()
+        }
     }
-
 
     private fun getCurrentLocation(onResult: (Double, Double) -> Unit) {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             onResult(0.0, 0.0)
             return
         }
-
         fusedLocationClient.lastLocation.addOnSuccessListener { location ->
             if (location != null) onResult(location.latitude, location.longitude)
             else onResult(0.0, 0.0)
         }.addOnFailureListener { onResult(0.0, 0.0) }
     }
-
-    private fun initTiltDetector() {
-        tiltDetector = TiltDetector(this, object : TiltCallback {
-            override fun onTiltLeft() { gameManager.moveLeft(); updateCarPosition() }
-            override fun onTiltRight() { gameManager.moveRight(); updateCarPosition() }
-            override fun onTiltForward() {}
-            override fun onTiltBackward() {}
-        })
-    }
-
-    // --- אתחול UI ---
 
     private fun initHotdogsMatrix() {
         hotdogs = arrayOf(

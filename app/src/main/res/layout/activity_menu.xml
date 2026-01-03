@@ -17,7 +17,7 @@
             android:id="@+id/menu_TXT_title"
             android:text="Sausage Dog Game"
             android:textSize="35sp"
-            android:textColor="#333333"
+            android:textColor="@color/sky_blue_dark_text"
             android:textStyle="bold"
             android:layout_marginBottom="8dp"
             android:layout_width="wrap_content"
@@ -27,7 +27,8 @@
             android:id="@+id/menu_SW_speed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Fast Mode Off/On "
+            android:text="Button Fast Mode Off/On "
+            android:textColor="@color/sky_blue_dark_text"
             android:textSize="18sp"
             android:layout_marginBottom="24dp"
             app:useMaterialThemeColors="true" />
@@ -37,21 +38,31 @@
             android:text="Play with Buttons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp" />
+            android:layout_marginBottom="12dp"
+            app:backgroundTint="@color/sky_blue_button"
+            android:textColor="@color/white_text"
+            android:textStyle="bold"/>
 
         <Button
             android:id="@+id/menu_BTN_sensors"
             android:text="Play with Sensors"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp" />
+            android:layout_marginBottom="12dp"
+            app:backgroundTint="@color/sky_blue_button"
+            android:textColor="@color/white_text"
+            android:textStyle="bold"/>
 
         <Button
             android:id="@+id/menu_BTN_scores"
             android:text="High Scores"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="@color/sky_blue_dark_text"
+            app:strokeColor="@color/sky_blue_dark_text"
+            app:strokeWidth="2dp"
+            android:textStyle="bold"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 </RelativeLayout>

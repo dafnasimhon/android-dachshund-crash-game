@@ -28,25 +28,19 @@ class MenuActivity : AppCompatActivity() {
         }
 
         btnSensorsMode.setOnClickListener {
-            val selectedDelay = if (speedSwitch.isChecked) {
-                GameConstants.Timer.FAST_DELAY
-            } else {
-                GameConstants.Timer.SLOW_DELAY
-            }
-            startGame(useSensors = true, delay = selectedDelay)
+            startGame(useSensors = true, delay = GameConstants.Timer.SLOW_DELAY)
         }
 
         btnHighScores.setOnClickListener {
             startActivity(Intent(this, ScoreActivity::class.java))
         }
     }
+
     private fun startGame(useSensors: Boolean, delay: Long) {
         val intent = Intent(this, MainActivity::class.java)
-
         val bundle = Bundle()
         bundle.putBoolean("USE_SENSORS", useSensors)
         bundle.putLong("DELAY", delay)
-
         intent.putExtras(bundle)
         startActivity(intent)
     }
