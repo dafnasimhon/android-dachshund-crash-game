@@ -5,4 +5,7 @@
     <color name="bottom_color">#E91E63</color>
     <color name="background_color">#FFECB3</color>
     <color name="game_over_overlay">#80000000</color>
+    <color name="sky_blue_button">#29B6F6</color>
+    <color name="sky_blue_dark_text">#01579B</color>
+    <color name="white_text">#FFFFFF</color>
 </resources>

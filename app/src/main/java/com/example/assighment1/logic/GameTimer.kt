@@ -8,10 +8,9 @@ import kotlinx.coroutines.launch
 import kotlin.coroutines.CoroutineContext
 
 class GameTimer(
-    private val delayMillis: Long,
+    private var delayMillis: Long,
     private val onTick: () -> Unit
 ) : CoroutineScope {
-
 
     private val job = Job()
     override val coroutineContext: CoroutineContext
@@ -21,6 +20,13 @@ class GameTimer(
     private var startTime: Long = 0L
     private var timerOn: Boolean = false
     private var lastElapsedMillis: Long = 0L
+
+    fun updateDelay(newDelay: Long) {
+        this.delayMillis = newDelay
+    }
+
+    val isActive: Boolean
+        get() = timerOn
 
     fun start(reset: Boolean = false) {
         if (timerOn) return
@@ -34,11 +40,7 @@ class GameTimer(
 
         timerJob = launch {
             while (timerOn) {
-                val currentTime = System.currentTimeMillis()
-                lastElapsedMillis = currentTime - startTime
-
                 onTick()
-
                 delay(delayMillis)
             }
         }
@@ -51,16 +53,7 @@ class GameTimer(
         timerJob?.cancel()
         timerJob = null
 
-
         lastElapsedMillis = System.currentTimeMillis() - startTime
-    }
-
-    fun getElapsedMillis(): Long {
-        return if (timerOn) {
-            System.currentTimeMillis() - startTime
-        } else {
-            lastElapsedMillis
-        }
     }
 
     fun release() {
