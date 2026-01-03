@@ -9,6 +9,23 @@
     android:layoutDirection="ltr"
     tools:context=".MainActivity">
 
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/main_LBL_odometer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="@dimen/spacing_l"
+        android:layout_marginStart="@dimen/spacing_l"
+        android:text="00000"
+        android:textColor="@android:color/black"
+        android:textSize="32sp"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="2"
+        android:textStyle="bold" />
+
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/main_LAY_hearts"
         android:layout_width="wrap_content"
@@ -107,36 +124,47 @@
                 android:layout_height="@dimen/zero_dp"
                 android:layout_weight="1"
                 android:orientation="horizontal">
+                <androidx.appcompat.widget.AppCompatImageView android:id="@+id/imgHotdog00" android:layout_width="@dimen/zero_dp" android:layout_height="match_parent" android:layout_weight="1" android:padding="@dimen/hotdog_padding" android:src="@drawable/hotdog" android:scaleType="centerInside" android:adjustViewBounds="true" />
+                <androidx.appcompat.widget.AppCompatImageView android:id="@+id/imgHotdog01" android:layout_width="@dimen/zero_dp" android:layout_height="match_parent" android:layout_weight="1" android:padding="@dimen/hotdog_padding" android:src="@drawable/hotdog" android:scaleType="centerInside" android:adjustViewBounds="true" />
+                <androidx.appcompat.widget.AppCompatImageView android:id="@+id/imgHotdog02" android:layout_width="@dimen/zero_dp" android:layout_height="match_parent" android:layout_weight="1" android:padding="@dimen/hotdog_padding" android:src="@drawable/hotdog" android:scaleType="centerInside" android:adjustViewBounds="true" />
+                <androidx.appcompat.widget.AppCompatImageView android:id="@+id/imgHotdog03" android:layout_width="@dimen/zero_dp" android:layout_height="match_parent" android:layout_weight="1" android:padding="@dimen/hotdog_padding" android:src="@drawable/hotdog" android:scaleType="centerInside" android:adjustViewBounds="true" />
+                <androidx.appcompat.widget.AppCompatImageView android:id="@+id/imgHotdog04" android:layout_width="@dimen/zero_dp" android:layout_height="match_parent" android:layout_weight="1" android:padding="@dimen/hotdog_padding" android:src="@drawable/hotdog" android:scaleType="centerInside" android:adjustViewBounds="true" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/imgHotdog00"
-                    android:layout_width="@dimen/zero_dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:padding="@dimen/hotdog_padding"
-                    android:src="@drawable/hotdog"
-                    android:scaleType="centerInside"
-                    android:adjustViewBounds="true" />
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/zero_dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+                <androidx.appcompat.widget.AppCompatImageView android:id="@+id/imgHotdog10" android:layout_width="@dimen/zero_dp" android:layout_height="match_parent" android:layout_weight="1" android:padding="@dimen/hotdog_padding" android:src="@drawable/hotdog" android:scaleType="centerInside" android:adjustViewBounds="true" />
+                <androidx.appcompat.widget.AppCompatImageView android:id="@+id/imgHotdog11" android:layout_width="@dimen/zero_dp" android:layout_height="match_parent" android:layout_weight="1" android:padding="@dimen/hotdog_padding" android:src="@drawable/hotdog" android:scaleType="centerInside" android:adjustViewBounds="true" />
+                <androidx.appcompat.widget.AppCompatImageView android:id="@+id/imgHotdog12" android:layout_width="@dimen/zero_dp" android:layout_height="match_parent" android:layout_weight="1" android:padding="@dimen/hotdog_padding" android:src="@drawable/hotdog" android:scaleType="centerInside" android:adjustViewBounds="true" />
+                <androidx.appcompat.widget.AppCompatImageView android:id="@+id/imgHotdog13" android:layout_width="@dimen/zero_dp" android:layout_height="match_parent" android:layout_weight="1" android:padding="@dimen/hotdog_padding" android:src="@drawable/hotdog" android:scaleType="centerInside" android:adjustViewBounds="true" />
+                <androidx.appcompat.widget.AppCompatImageView android:id="@+id/imgHotdog14" android:layout_width="@dimen/zero_dp" android:layout_height="match_parent" android:layout_weight="1" android:padding="@dimen/hotdog_padding" android:src="@drawable/hotdog" android:scaleType="centerInside" android:adjustViewBounds="true" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/imgHotdog01"
-                    android:layout_width="@dimen/zero_dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:padding="@dimen/hotdog_padding"
-                    android:src="@drawable/hotdog"
-                    android:scaleType="centerInside"
-                    android:adjustViewBounds="true" />
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/zero_dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+                <androidx.appcompat.widget.AppCompatImageView android:id="@+id/imgHotdog20" android:layout_width="@dimen/zero_dp" android:layout_height="match_parent" android:layout_weight="1" android:padding="@dimen/hotdog_padding" android:src="@drawable/hotdog" android:scaleType="centerInside" android:adjustViewBounds="true" />
+                <androidx.appcompat.widget.AppCompatImageView android:id="@+id/imgHotdog21" android:layout_width="@dimen/zero_dp" android:layout_height="match_parent" android:layout_weight="1" android:padding="@dimen/hotdog_padding" android:src="@drawable/hotdog" android:scaleType="centerInside" android:adjustViewBounds="true" />
+                <androidx.appcompat.widget.AppCompatImageView android:id="@+id/imgHotdog22" android:layout_width="@dimen/zero_dp" android:layout_height="match_parent" android:layout_weight="1" android:padding="@dimen/hotdog_padding" android:src="@drawable/hotdog" android:scaleType="centerInside" android:adjustViewBounds="true" />
+                <androidx.appcompat.widget.AppCompatImageView android:id="@+id/imgHotdog23" android:layout_width="@dimen/zero_dp" android:layout_height="match_parent" android:layout_weight="1" android:padding="@dimen/hotdog_padding" android:src="@drawable/hotdog" android:scaleType="centerInside" android:adjustViewBounds="true" />
+                <androidx.appcompat.widget.AppCompatImageView android:id="@+id/imgHotdog24" android:layout_width="@dimen/zero_dp" android:layout_height="match_parent" android:layout_weight="1" android:padding="@dimen/hotdog_padding" android:src="@drawable/hotdog" android:scaleType="centerInside" android:adjustViewBounds="true" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/imgHotdog02"
-                    android:layout_width="@dimen/zero_dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:padding="@dimen/hotdog_padding"
-                    android:src="@drawable/hotdog"
-                    android:scaleType="centerInside"
-                    android:adjustViewBounds="true" />
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/zero_dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+                <androidx.appcompat.widget.AppCompatImageView android:id="@+id/imgHotdog30" android:layout_width="@dimen/zero_dp" android:layout_height="match_parent" android:layout_weight="1" android:padding="@dimen/hotdog_padding" android:src="@drawable/hotdog" android:scaleType="centerInside" android:adjustViewBounds="true" />
+                <androidx.appcompat.widget.AppCompatImageView android:id="@+id/imgHotdog31" android:layout_width="@dimen/zero_dp" android:layout_height="match_parent" android:layout_weight="1" android:padding="@dimen/hotdog_padding" android:src="@drawable/hotdog" android:scaleType="centerInside" android:adjustViewBounds="true" />
+                <androidx.appcompat.widget.AppCompatImageView android:id="@+id/imgHotdog32" android:layout_width="@dimen/zero_dp" android:layout_height="match_parent" android:layout_weight="1" android:padding="@dimen/hotdog_padding" android:src="@drawable/hotdog" android:scaleType="centerInside" android:adjustViewBounds="true" />
+                <androidx.appcompat.widget.AppCompatImageView android:id="@+id/imgHotdog33" android:layout_width="@dimen/zero_dp" android:layout_height="match_parent" android:layout_weight="1" android:padding="@dimen/hotdog_padding" android:src="@drawable/hotdog" android:scaleType="centerInside" android:adjustViewBounds="true" />
+                <androidx.appcompat.widget.AppCompatImageView android:id="@+id/imgHotdog34" android:layout_width="@dimen/zero_dp" android:layout_height="match_parent" android:layout_weight="1" android:padding="@dimen/hotdog_padding" android:src="@drawable/hotdog" android:scaleType="centerInside" android:adjustViewBounds="true" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
@@ -145,193 +173,29 @@
                 android:layout_weight="1"
                 android:orientation="horizontal">
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/imgHotdog10"
-                    android:layout_width="@dimen/zero_dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:padding="@dimen/hotdog_padding"
-                    android:src="@drawable/hotdog"
-                    android:scaleType="centerInside"
-                    android:adjustViewBounds="true" />
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/imgHotdog11"
-                    android:layout_width="@dimen/zero_dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:padding="@dimen/hotdog_padding"
-                    android:src="@drawable/hotdog"
-                    android:scaleType="centerInside"
-                    android:adjustViewBounds="true" />
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/imgHotdog12"
-                    android:layout_width="@dimen/zero_dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:padding="@dimen/hotdog_padding"
-                    android:src="@drawable/hotdog"
-                    android:scaleType="centerInside"
-                    android:adjustViewBounds="true" />
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/zero_dp"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/imgHotdog20"
-                    android:layout_width="@dimen/zero_dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:padding="@dimen/hotdog_padding"
-                    android:src="@drawable/hotdog"
-                    android:scaleType="centerInside"
-                    android:adjustViewBounds="true" />
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/imgHotdog21"
-                    android:layout_width="@dimen/zero_dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:padding="@dimen/hotdog_padding"
-                    android:src="@drawable/hotdog"
-                    android:scaleType="centerInside"
-                    android:adjustViewBounds="true" />
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/imgHotdog22"
-                    android:layout_width="@dimen/zero_dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:padding="@dimen/hotdog_padding"
-                    android:src="@drawable/hotdog"
-                    android:scaleType="centerInside"
-                    android:adjustViewBounds="true" />
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/zero_dp"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/imgHotdog30"
-                    android:layout_width="@dimen/zero_dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:padding="@dimen/hotdog_padding"
-                    android:src="@drawable/hotdog"
-                    android:scaleType="centerInside"
-                    android:adjustViewBounds="true" />
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/imgHotdog31"
-                    android:layout_width="@dimen/zero_dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:padding="@dimen/hotdog_padding"
-                    android:src="@drawable/hotdog"
-                    android:scaleType="centerInside"
-                    android:adjustViewBounds="true" />
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/imgHotdog32"
-                    android:layout_width="@dimen/zero_dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:padding="@dimen/hotdog_padding"
-                    android:src="@drawable/hotdog"
-                    android:scaleType="centerInside"
-                    android:adjustViewBounds="true" />
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/zero_dp"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <FrameLayout
-                    android:layout_width="@dimen/zero_dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/imgHotdog40"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:padding="@dimen/hotdog_padding"
-                        android:src="@drawable/hotdog"
-                        android:scaleType="centerInside"
-                        android:adjustViewBounds="true"
-                        android:visibility="invisible" />
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/main_IMG_car_left"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:padding="@dimen/zero_dp"
-                        android:src="@drawable/dachshund"
-                        android:scaleType="centerInside"
-                        android:adjustViewBounds="true"
-                        android:visibility="invisible" />
+                <FrameLayout android:layout_width="@dimen/zero_dp" android:layout_height="match_parent" android:layout_weight="1">
+                    <androidx.appcompat.widget.AppCompatImageView android:id="@+id/imgHotdog40" android:layout_width="match_parent" android:layout_height="match_parent" android:padding="@dimen/hotdog_padding" android:src="@drawable/hotdog" android:scaleType="centerInside" android:adjustViewBounds="true" android:visibility="invisible" />
+                    <androidx.appcompat.widget.AppCompatImageView android:id="@+id/main_IMG_car_0" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/dachshund" android:scaleType="centerInside" android:visibility="invisible" />
                 </FrameLayout>
 
-                <FrameLayout
-                    android:layout_width="@dimen/zero_dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/imgHotdog41"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:padding="@dimen/hotdog_padding"
-                        android:src="@drawable/hotdog"
-                        android:scaleType="centerInside"
-                        android:adjustViewBounds="true"
-                        android:visibility="invisible" />
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/main_IMG_car"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:padding="@dimen/zero_dp"
-                        android:src="@drawable/dachshund"
-                        android:scaleType="centerInside"
-                        android:adjustViewBounds="true"
-                        android:visibility="visible" />
+                <FrameLayout android:layout_width="@dimen/zero_dp" android:layout_height="match_parent" android:layout_weight="1">
+                    <androidx.appcompat.widget.AppCompatImageView android:id="@+id/imgHotdog41" android:layout_width="match_parent" android:layout_height="match_parent" android:padding="@dimen/hotdog_padding" android:src="@drawable/hotdog" android:scaleType="centerInside" android:adjustViewBounds="true" android:visibility="invisible" />
+                    <androidx.appcompat.widget.AppCompatImageView android:id="@+id/main_IMG_car_1" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/dachshund" android:visibility="invisible" />
                 </FrameLayout>
 
-                <FrameLayout
-                    android:layout_width="@dimen/zero_dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
+                <FrameLayout android:layout_width="@dimen/zero_dp" android:layout_height="match_parent" android:layout_weight="1">
+                    <androidx.appcompat.widget.AppCompatImageView android:id="@+id/imgHotdog42" android:layout_width="match_parent" android:layout_height="match_parent" android:padding="@dimen/hotdog_padding" android:src="@drawable/hotdog" android:scaleType="centerInside" android:adjustViewBounds="true" android:visibility="invisible" />
+                    <androidx.appcompat.widget.AppCompatImageView android:id="@+id/main_IMG_car_2" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/dachshund" android:visibility="visible" />
+                </FrameLayout>
 
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/imgHotdog42"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:padding="@dimen/hotdog_padding"
-                        android:src="@drawable/hotdog"
-                        android:scaleType="centerInside"
-                        android:adjustViewBounds="true"
-                        android:visibility="invisible" />
+                <FrameLayout android:layout_width="@dimen/zero_dp" android:layout_height="match_parent" android:layout_weight="1">
+                    <androidx.appcompat.widget.AppCompatImageView android:id="@+id/imgHotdog43" android:layout_width="match_parent" android:layout_height="match_parent" android:padding="@dimen/hotdog_padding" android:src="@drawable/hotdog" android:scaleType="centerInside" android:adjustViewBounds="true" android:visibility="invisible" />
+                    <androidx.appcompat.widget.AppCompatImageView android:id="@+id/main_IMG_car_3" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/dachshund" android:visibility="invisible" />
+                </FrameLayout>
 
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/main_IMG_car_right"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:padding="@dimen/zero_dp"
-                        android:src="@drawable/dachshund"
-                        android:scaleType="centerInside"
-                        android:adjustViewBounds="true"
-                        android:visibility="invisible" />
+                <FrameLayout android:layout_width="@dimen/zero_dp" android:layout_height="match_parent" android:layout_weight="1">
+                    <androidx.appcompat.widget.AppCompatImageView android:id="@+id/imgHotdog44" android:layout_width="match_parent" android:layout_height="match_parent" android:padding="@dimen/hotdog_padding" android:src="@drawable/hotdog" android:scaleType="centerInside" android:adjustViewBounds="true" android:visibility="invisible" />
+                    <androidx.appcompat.widget.AppCompatImageView android:id="@+id/main_IMG_car_4" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/dachshund" android:visibility="invisible" />
                 </FrameLayout>
             </androidx.appcompat.widget.LinearLayoutCompat>
         </androidx.appcompat.widget.LinearLayoutCompat>
