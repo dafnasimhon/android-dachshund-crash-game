@@ -76,7 +76,6 @@ class MainActivity : AppCompatActivity() {
 
         startNewGame()
 
-        // הפעלת הטיימר עם הדיליי שנבחר (בסנסורים זה תמיד יתחיל ב-Slow)
         gameTimer = GameTimer(gameDelay) {
             gameTick()
         }
@@ -113,7 +112,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initTiltDetector() {
-        // הגנה: אם אנחנו לא במצב סנסורים, לא יוצרים את האובייקט
         if (!useSensors) return
 
         tiltDetector = TiltDetector(this, object : TiltCallback {
@@ -138,7 +136,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun updateSpeed(newDelay: Long) {
-        // חסימה מוחלטת: אם לא משתמשים בסנסורים, אי אפשר לשנות מהירות דרך הטיה
         if (!useSensors) return
 
         if (gameDelay != newDelay) {
@@ -160,7 +157,6 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         gameTimer.start()
-        // הפעלה של האזנה לסנסורים רק אם המצב פעיל
         if (useSensors) {
             tiltDetector?.start()
         }
@@ -169,7 +165,6 @@ class MainActivity : AppCompatActivity() {
     override fun onPause() {
         super.onPause()
         gameTimer.stop()
-        // עצירת האזנה לסנסורים רק אם הם הופעלו
         if (useSensors) {
             tiltDetector?.stop()
         }

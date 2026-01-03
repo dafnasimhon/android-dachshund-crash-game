@@ -42,7 +42,7 @@ class ListFragment : Fragment() {
         val sdf = SimpleDateFormat("dd/MM/yy HH:mm", Locale.getDefault())
 
         val darkBlue = ContextCompat.getColor(requireContext(), R.color.sky_blue_dark_text)
-        val rowTextColor = Color.parseColor("#444444") // אפור כהה לנתונים
+        val rowTextColor = Color.parseColor("#444444")
 
         records.forEachIndexed { index, record ->
             val row = TableRow(context).apply {
@@ -50,7 +50,6 @@ class ListFragment : Fragment() {
                 background = ContextCompat.getDrawable(requireContext(), android.R.drawable.list_selector_background)
             }
 
-            // 1. מספר סידורי (#)
             val txtRank = TextView(context).apply {
                 text = "${index + 1}."
                 setTextColor(darkBlue)

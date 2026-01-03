@@ -39,7 +39,7 @@ class ScoreActivity : AppCompatActivity() {
     private fun findViews() {
         main_FRAME_list = findViewById(R.id.main_FRAME_list)
         main_FRAME_map = findViewById(R.id.main_FRAME_map)
-        score_BTN_menu = findViewById(R.id.score_BTN_menu) // קישור ה-ID מה-XML
+        score_BTN_menu = findViewById(R.id.score_BTN_menu)
     }
 
     private fun initViews() {
