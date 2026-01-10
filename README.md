@@ -72,6 +72,11 @@ Manages the dog's position, collision detection, life count, and distance calcul
 
 **📱 Visual Overview**
 
+icon:
+
+<img width="114" height="136" alt="image" src="https://github.com/user-attachments/assets/9be894f8-1d32-41ef-a54f-57965d50517d" />
+
+
 Menu: Speed selection and control mode toggle.
 
 <img width="404" height="790" alt="image" src="https://github.com/user-attachments/assets/56dd03e3-200a-483f-972f-fa0ed7ff1022" />
@@ -82,7 +87,7 @@ Game Screen: 5x5 grid display, heart/life indicators, and the digital odometer.
 <img width="527" height="816" alt="image" src="https://github.com/user-attachments/assets/f428224c-9cc8-428f-b741-96f2e80f239b" />
 
 
-Score Screen: A modern, styled table with rounded corners and an integrated Google Map for score locations.
+Score Screen: A table with rounded corners and an integrated Google Map for score locations.
 
 <img width="441" height="795" alt="image" src="https://github.com/user-attachments/assets/54e4f364-a981-49a7-a0de-e57a6026b44d" />
 
